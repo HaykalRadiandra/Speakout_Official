@@ -1,1 +1,1 @@
-Jangan hapus atau ubah folder inc atau file .js baik di folder js atau di file .php
+This is our final assignment to create a BK Counseling and Consultation web application.
