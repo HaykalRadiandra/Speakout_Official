@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="favicon/favicon.ico" rel="shortcut icon" type="image/png" />
+    <link rel="stylesheet" href="css/bootstrap_v5.css">
+    <link rel="stylesheet" href="css/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/native_styling/login.css">
+    <title>SPEAKOUT | Log In</title>
+    <style>
+        ::placeholder {
+            font-weight: 500;
+            color: #B4B9BB !important;
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: gray;
+        }
+    </style>
+</head>
+<body class="d-flex justify-content-center align-items-center vh-100 primary-bg">
+    <div class="container pb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">  
+                <div class="card border-0 bg-transparent">
+                    <div class="card-header bg-transparent text-black text-center border-bottom-0 mb-0 mb-sm-2">
+                        <h2 class="fw-bold fs-3">SPEAKOUT</h2>
+                    </div>
+                    <div class="card-body">
+                        <form action="inc/cek_login.php" method="post">
+                            <div class="mb-3 text-left">
+                                <label for="userid" class="form-label fw-semibold fs-5">Nama Pengguna</label>
+                                <input type="text" name="userid" id="userid" class="form-control fs-6" placeholder="Masukan nama pengguna" autocomplete="off" required>
+                            </div>
+                            <div class="mb-3 text-left">
+                                <label for="password" class="form-label fw-semibold fs-5">Kata Sandi</label>
+                                <div class="password-container">
+                                    <input type="password" name="password" id="password" class="form-control fs-6" placeholder="Masukan kata sandi" required>
+                                    <span class="bi bi-eye-slash toggle-password" id="togglePassword"></span>
+                                </div>
+                            </div>
+                            <div class="mb-3 text-left">
+                                <label for="jenisaksesxOptions" class="form-label fw-semibold fs-5">Akses Ke</label>
+                                <div class="d-flex justify-content-start justify-content-sm-evenly flex-wrap">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="jenisaksesxOptions" id="jenisaksesx1" value="1">
+                                        <label class="form-check-label fw-semibold text-muted" for="jenisaksesx1">Kesiswaan</label>
+                                    </div>
+                                    <div class="me-0 m-sm-1 form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="jenisaksesxOptions" id="jenisaksesx2" value="2" checked>
+                                        <label class="form-check-label fw-semibold text-muted" for="jenisaksesx2">Bimbingan Konseling</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4 mt-sm-5 text-center">
+                                <button type="submit" class="btn btn-primary rounded-4 fw-bold fs-6 w-50">Log In</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Menonaktifkan fungsi klik kanan
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        })
+
+        // JavaScript untuk toggle password visibility
+        document.getElementById('togglePassword').addEventListener('click', function () {
+            let passwordField = document.getElementById('password');
+            let icon = this;
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                icon.classList.remove('bi-eye-slash');
+                icon.classList.add('bi-eye');
+            } else {
+                passwordField.type = "password";
+                icon.classList.remove('bi-eye');
+                icon.classList.add('bi-eye-slash');
+            }
+        });
+    </script>
+</body>
+</html>

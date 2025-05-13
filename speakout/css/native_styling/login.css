@@ -1,0 +1,166 @@
+:root {
+    --main-bg-color: #F7F5FB;
+    --main-bg-color0: #ECEAF7;
+    --main-bg-color1: #DDD9F1;
+    /* --main-bg-color1: #B3A9DF; */
+    --main-bg-color2: #988AD4;
+    --main-bg-color3: #7866C7;
+    --second-bg-color: ;
+
+    --main-text-color: #392C76;
+    --second-text-color: ;
+    --third-text-color: ;
+}
+
+.primary-text {
+    color: var(--main-text-color);
+}
+
+.second-text {
+    color: rgb(155, 155, 155);
+}
+
+.primary-bg {
+    background-color: var(--main-bg-color);
+}
+
+.secondary-bg {
+    background-color: var(--main-bg-color1);
+}
+
+.rounded-full {
+    border-radius: 100%;
+}
+
+.list-group-item {
+    border: none;
+    padding: 5px 0;
+}
+
+.list-group-item-action.active {
+    background-color: var(--main-bg-color1);
+    color: var(--main-text-color);
+    font-weight: bold;
+    border: none;
+}
+
+.hover:hover span {
+    color: var(--main-text-color);
+    transition: .3s;
+}
+
+.hoverr:hover {
+    transition: .3s;
+    background-color: var(--main-bg-color0);
+    color: var(--main-text-color);
+}
+
+.sidebar-item{
+    transition: all 0.3s;
+}
+
+.activedd{
+    background-color: var(--main-bg-color0);
+    color: var(--main-text-color);
+}
+
+.dropdown-active div {
+    transition: all 0.3s;
+}
+
+.dropdown-active.activedd div{
+    color: var(--main-text-color);
+}
+
+/* Transisi halus untuk ikon */
+.toggle-icon {
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(0deg);
+}
+
+/* Saat menu terbuka, panah mengarah ke atas */
+[data-bs-toggle="collapse"][aria-expanded="true"] .toggle-icon {
+    transform: rotate(180deg);
+}
+
+[data-bs-toggle="collapse"][aria-expanded="true"].sidebar-item {
+    background-color: var(--main-bg-color0);
+    color: var(--main-text-color);
+}
+
+
+#wrapper {
+    overflow-x: hidden;
+    background-color: var(--main-bg-color0);
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -14rem;
+    -webkit-transition: margin 0.25s ease-out;
+    -moz-transition: margin 0.25s ease-out;
+    -o-transition: margin 0.25s ease-out;
+    transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+}
+
+#sidebar-wrapper .list-group {
+    width: 14rem;
+}
+
+#page-content-wrapper {
+    min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+
+#menu-toggle {
+    cursor: pointer;
+}
+
+.navbar-custom {
+    transition: .3s ease-in-out;
+}
+.navbar-custom:focus {
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Jangan Pernah Diubah Code Diatas Kecuali .Roor */
+
+/* Coding Di bawah ini */
+
+
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -14rem;
+    }
+    /* Jangan Pernah Diubah Code Diatas  */
+
+    /* Coding Dibawah ini */
+}
+
+
+/* =================================== */
+.right-side section.content img {
+    width: 95%;
+}
+
+aside.right-side section.content .box-body .row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
